@@ -1,25 +1,25 @@
 class FaucetCli < Formula
   desc "Config-driven CLI runner for faucet-stream pipelines (YAML / JSON, Meltano-style)"
   homepage "https://faucet-hq.github.io/faucet-stream/"
-  version "1.8.0"
+  version "1.8.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.8.0/faucet-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "063d47c1416a4f4c89c7c66f013db50aab075fa4ed7622689e42dded67931e98"
+      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.8.1/faucet-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "b5dc859be428e7d0ec15db9bffbc24e5b0025fdec37c8217256cbf22b33fa9f7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.8.0/faucet-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "1c4cdf7a32690a29b3abbea24662e5a5d7987326d93a9d6a51758a99da4b0a33"
+      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.8.1/faucet-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "82f211436b5ec7d5ef0c0614acd4f703c78cf4404ec6128b19790e9fbdb21bae"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.8.0/faucet-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "af346bce94e8d85f20e53be2d2e90b9dd4726c539c38855c9993c23a82e3c2ea"
+      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.8.1/faucet-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "fc851537b49b721fd081cbfd9d9ac5ba092521e7572b8a060ab0f619d6ab0143"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.8.0/faucet-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "90555c73d02034cb345f30dc022492bdd6f28e2e02160afab6fbc0a623557035"
+      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.8.1/faucet-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "10f450f6e84b34d4c4a348f5680289a9c47670f4579c69530b3ff83f87981562"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -47,10 +47,18 @@ class FaucetCli < Formula
   end
 
   def install
-    bin.install "faucet" if OS.mac? && Hardware::CPU.arm?
-    bin.install "faucet" if OS.mac? && Hardware::CPU.intel?
-    bin.install "faucet" if OS.linux? && Hardware::CPU.arm?
-    bin.install "faucet" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "faucet"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "faucet"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "faucet"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "faucet"
+    end
 
     install_binary_aliases!
 
