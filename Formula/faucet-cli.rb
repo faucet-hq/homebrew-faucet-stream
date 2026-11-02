@@ -1,25 +1,25 @@
 class FaucetCli < Formula
   desc "Config-driven CLI runner for faucet-stream pipelines (YAML / JSON, Meltano-style)"
   homepage "https://faucet-hq.github.io/faucet-stream/"
-  version "1.16.0"
+  version "1.17.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.16.0/faucet-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "88eae50029730b45a84703f8642c3852cf2640543388350916f70c236bda5bb4"
+      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.17.0/faucet-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "5d186ae1cea7c56f4c690d34ae1a5311f0ac62dbe77ae307fdbbc6393b4f84c8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.16.0/faucet-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "1ad0034361402ecc7e5cb3764f5455c1acc549010820d144738d4ef263fc155c"
+      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.17.0/faucet-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "9dc49fa5e9fa8ffcfaf45bd0498bded1dca9c75a3a8033261f1c29c4ea8d4843"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.16.0/faucet-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "27e1f994d4b8c6f72cc761fd7d7380e450490db9218eeb033f8490c666844b62"
+      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.17.0/faucet-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "eb46d5c3f91bbb7f1dca04623f535969516960d2b238aa7b06aa62e78e2ab0c7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.16.0/faucet-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8a87671efabfe30a4838323d75ad0eafb33401e961b7941552209f270da61b0c"
+      url "https://github.com/faucet-hq/faucet-stream/releases/download/faucet-cli-v1.17.0/faucet-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "99d4ffc8626693affa9c545cd5e014ad0e436fd725487371e44fc213c2832869"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
